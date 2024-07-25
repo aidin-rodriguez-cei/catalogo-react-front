@@ -1,8 +1,15 @@
 import { Outlet } from "react-router-dom";
-// import './css/catalogo.css'
+import './css/catalogo.css'
+
+import { createContext, useState } from 'react'
+
+export const ModoOscuroContext = createContext();
 
 const Layout = () => {
+    const [tema, setTema] = useState("light")
+
     return ( 
+        <ModoOscuroContext.Provider value={{tema, setTema}}>
         <div>
             {/* <Header /> */}
             <header>
@@ -12,8 +19,13 @@ const Layout = () => {
             <main>
                 <Outlet />
             </main>
+
+            <button onClick={()=>{
+                setTema(tema=="dark"?"light":"dark");
+            }}>Cambiar Tema: {tema}</button>
             {/* <Footer /> */}
         </div>
+        </ModoOscuroContext.Provider>
      );
 }
  

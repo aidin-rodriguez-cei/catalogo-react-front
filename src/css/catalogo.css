@@ -1,0 +1,68 @@
+/* Estilos generales */
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: #ffff;
+    margin: 0;
+    padding: 0;
+}
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .search-container input {
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+
+/* Contenedor del catálogo */
+.catalog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilo de cada producto */
+.producto {
+    background-color: #875196;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen del producto */
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Detalles del producto */
+.producto p {
+    margin: 5px 0;
+    color: #fff;
+}
+
+.producto p span {
+    font-weight: bold;
+}
+
+h1 {
+    color: black;
+}
