@@ -1,32 +1,46 @@
-import { Outlet } from "react-router-dom";
-import './css/catalogo.css'
+import { Outlet, Link } from "react-router-dom";
+import { useContext, useState } from 'react';
+import { ModoOscuroContext } from './context/ModoOscuroContext';
+import { CarritoProvider } from './context/CarritoContext';
+import './css/catalogo.css';
 
-import { createContext, useState } from 'react'
+// Componente Navbar
+const Navbar = () => {
+  return (
+    <nav>
+      <Link to="/">Inicio</Link>
+      <Link to="/carrito">Carrito</Link>
+      <Link to="/checkout">Checkout</Link>
+    </nav>
+  );
+};
 
-export const ModoOscuroContext = createContext();
-
+// Componente Layout
 const Layout = () => {
-    const [tema, setTema] = useState("light")
+  const [tema, setTema] = useState("light");
 
-    return ( 
-        <ModoOscuroContext.Provider value={{tema, setTema}}>
-        <div>
-            {/* <Header /> */}
-            <header>
-                {/* <h1>Proyecto Catalogo</h1> */}
-            </header>
+  return (
+    <ModoOscuroContext.Provider value={{ tema, setTema }}>
+      <CarritoProvider>
+        <div className={tema}>
+          <header>
+            <div className="header-content">
+              <Navbar />
+              <button className="theme-toggle" onClick={() => {
+                setTema(tema === "dark" ? "light" : "dark");
+              }}>
+                Cambiar Tema: {tema}
+              </button>
+            </div>
+          </header>
 
-            <main>
-                <Outlet />
-            </main>
-
-            <button onClick={()=>{
-                setTema(tema=="dark"?"light":"dark");
-            }}>Cambiar Tema: {tema}</button>
-            {/* <Footer /> */}
+          <main>
+            <Outlet />
+          </main>
         </div>
-        </ModoOscuroContext.Provider>
-     );
-}
- 
+      </CarritoProvider>
+    </ModoOscuroContext.Provider>
+  );
+};
+
 export default Layout;

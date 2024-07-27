@@ -1,40 +1,43 @@
 import { createBrowserRouter } from "react-router-dom";
 
-//Importar páginas 
-import Home from '../pages/Home'
-import Catalogo from "../pages/Catalogo";
-import Producto from "../pages/Producto";
+// Importar páginas
+import HomeCatalogo from '../pages/HomeCatalogo';
+import DetalleProducto from "../pages/DetalleProducto";
+import Carrito from '../pages/Carrito';
+import Checkout from '../pages/Checkout';
 
-//Importar páginas especiales
+// Importar páginas especiales
 import Layout from "../Layout";
 import ErrorPage from "../error-page";
 
-const router = createBrowserRouter([{
+const router = createBrowserRouter([
+  {
     path: '/',
     element: <Layout />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
-        {
-            index: true,
-            element: <Home />
-        },
-
-        {
-            path: 'catalogo',
-            element: <Catalogo />
-        },
-
-        {
-            path: 'producto/:productoId',
-            element: <Producto />
-        },
-
-        {
-            path: '*',
-            element: <ErrorPage />
-        }
+      {
+        index: true,
+        element: <HomeCatalogo />
+      },
+      {
+        path: 'producto/:productoId',
+        element: <DetalleProducto />
+      },
+      {
+        path: 'carrito',
+        element: <Carrito />
+      },
+      {
+        path: 'checkout',
+        element: <Checkout />
+      },
+      {
+        path: '*',
+        element: <ErrorPage />
+      }
     ]
-
-}]);
+  }
+]);
 
 export default router;
