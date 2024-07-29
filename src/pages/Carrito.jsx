@@ -18,10 +18,10 @@ const Carrito = () => {
       {carrito.length > 0 && (
         <>
           <ul>
-            {carrito.map((producto, index) => (
-              <li key={index}>
+            {carrito.map((producto) => (
+              <li key={producto.id}>
                 <p>{producto.nombre} - ${producto.precio} x {producto.cantidad}</p>
-                <button onClick={() => quitarDelCarrito(index)}>Eliminar</button>
+                <button onClick={() => quitarDelCarrito(producto.id)}>Eliminar</button>
               </li>
             ))}
           </ul>

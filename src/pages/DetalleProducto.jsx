@@ -19,6 +19,7 @@ const DetalleProducto = () => {
       });
   }, [productoId]);
 
+
   const aumentarCantidad = () => setCantidad(cantidad + 1);
   const disminuirCantidad = () => setCantidad(cantidad > 1 ? cantidad - 1 : 1);
 

@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
-import { useContext, useState } from 'react';
-import { ModoOscuroContext } from './context/ModoOscuroContext';
+import { useContext } from 'react';
+import { ModoOscuroContext, ModoOscuroProvider } from './context/ModoOscuroContext';
 import { CarritoProvider } from './context/CarritoContext';
 import './css/catalogo.css';
 
@@ -17,30 +17,31 @@ const Navbar = () => {
 
 // Componente Layout
 const Layout = () => {
-  const [tema, setTema] = useState("light");
+  const { tema, toggleTema } = useContext(ModoOscuroContext);
 
   return (
-    <ModoOscuroContext.Provider value={{ tema, setTema }}>
-      <CarritoProvider>
-        <div className={tema}>
-          <header>
-            <div className="header-content">
-              <Navbar />
-              <button className="theme-toggle" onClick={() => {
-                setTema(tema === "dark" ? "light" : "dark");
-              }}>
-                Cambiar Tema: {tema}
-              </button>
-            </div>
-          </header>
-
-          <main>
-            <Outlet />
-          </main>
+    <div className={tema}>
+      <header>
+        <div className="header-content">
+          <Navbar />
+          <button className="theme-toggle" onClick={toggleTema}>
+            Cambiar Tema: {tema}
+          </button>
         </div>
-      </CarritoProvider>
-    </ModoOscuroContext.Provider>
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </div>
   );
 };
 
-export default Layout;
+const App = () => (
+  <ModoOscuroProvider>
+    <CarritoProvider>
+      <Layout />
+    </CarritoProvider>
+  </ModoOscuroProvider>
+);
+
+export default App;

@@ -38,10 +38,11 @@ const Home = () => {
 
   return (
     <div>
+      <h1 className="titulo-inicial">Catálogo Pociones Mágicas</h1> 
       <div className="search-container">
         <input
           type="text"
-          placeholder="Buscar por nombre o efecto"
+          placeholder="Busca por nombre o efecto"
           value={searchTerm}
           onChange={handleSearch}
         />
@@ -52,7 +53,7 @@ const Home = () => {
           onChange={handlePriceFilter}
         />
       </div>
-      <h1 className="titulo-inicial">Catálogo Pociones Mágicas</h1> 
+
       <div className="catalog-container">
         {filteredProducts.map((producto) => (
           <article key={producto.id} className="producto">
