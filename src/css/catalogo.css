@@ -189,6 +189,7 @@ nav a:hover {
 .carrito-container ul {
     list-style-type: none;
     padding: 0;
+    width: 100%;
 }
 
 .carrito-container li {
@@ -216,7 +217,7 @@ nav a:hover {
 }
 
 /* Estilo para el botón de comprar en la página de carrito */
-.btn-comprar-carrito {
+.btn-comprar-carrito∫ {
     background-color: #9500ff; /* Color de fondo igual al de checkout */
     color: #fff;
     border: none;
@@ -279,28 +280,6 @@ nav a:hover {
     font-size: 1.2em;
 }
 
-/* Adaptación en móviles */
-@media (max-width: 768px) {
-    .catalog-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .producto {
-        width: 90%;
-        max-width: 400px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .theme-toggle {
-        margin-top: 10px;
-    }
-}
-
 /* Estilo para el botón de agregar producto */
 .agregar-producto {
     background-color: #6f418b; /* Azul para destacar */
@@ -325,7 +304,7 @@ nav a:hover {
 .producto-title {
     font-size: 2em; /* Tamaño más grande para el título */
     margin-bottom: 10px;
-    color: #333; /* Asegura que el color sea consistente */
+    color: #333; 
 }
 
 
@@ -337,7 +316,7 @@ nav a:hover {
 }
 
 .cantidad-container button {
-    background-color: #f0eaea; /* Azul para destacar */
+    background-color: #f0eaea; 
     color: #9500ff;
     border: none;
     padding: 5px 10px;
@@ -349,7 +328,7 @@ nav a:hover {
 }
 
 .cantidad-container button:hover {
-    background-color: #f0eaea; /* Azul más oscuro para hover */
+    background-color: #f0eaea; 
     color: #9500ff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
@@ -371,5 +350,25 @@ nav a:hover {
 }
 
 
+/* Adaptación en móviles */
+@media (max-width: 768px) {
+    .catalog-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .producto {
+        width: 90%;
+        max-width: 400px;
+    }
 
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .theme-toggle {
+        margin-top: 10px;
+    }
+}
 
