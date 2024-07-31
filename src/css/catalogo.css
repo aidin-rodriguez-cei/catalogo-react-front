@@ -217,14 +217,14 @@ nav a:hover {
 }
 
 /* Estilo para el botón de comprar en la página de carrito */
-.btn-comprar-carrito∫ {
+.btn-comprar-carrito {
     background-color: #9500ff; /* Color de fondo igual al de checkout */
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1em; /* Tamaño de fuente igual al de checkout */
+    font-size: 1em; /* Tamaño de fuente igual al de checkout */
     transition: background-color 0.3s;
 }
 
